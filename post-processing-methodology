@@ -1,0 +1,21 @@
+https://r105.threejsfundamentals.org/threejs/lessons/threejs-post-processing.html
+
+
+
+const composer = new EffectComposer(renderer);
+const renderScene = new RenderPass(scene, camera);
+composer.addPass(renderScene);
+const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 1.5, 0.4, 100);
+bloomPass.threshold = 0;
+bloomPass.strength = 2.0;
+bloomPass.radius = 0;
+composer.addPass(bloomPass);
+
+...
+
+composer.render(scene, camera);
+
+
+
+SET Effect Composer > RENDER Render Pass and ADD > SET Unreal Bloom Pass and ADD > 
+... > RENER Composer.   
